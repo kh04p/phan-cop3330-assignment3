@@ -1,3 +1,7 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 Khoa Phan
+ */
 package ex44;
 
 import com.google.gson.JsonArray;

@@ -31,6 +31,13 @@ public class website {
         }
     }
 
+    //creates directory using mkdirs
+    public static String generateDir(String dirPath) {
+        File file = new File(dirPath);
+        file.mkdirs();
+        return String.format("Generated directory at %s%n", dirPath);
+    }
+
     public static String generate(String filePath, String author, String title, String choiceJS, String choiceCSS) throws IOException {
         Scanner in = new Scanner(System.in);
         StringBuilder output = new StringBuilder(); //StringBuilder to append all confirmations from file/folder creation.
@@ -50,12 +57,5 @@ public class website {
             output.append(generateHTML(filePath + "index.html", author, title));
         }
         return output.toString();
-    }
-
-    //creates directory using mkdirs
-    public static String generateDir(String dirPath) {
-        File file = new File(dirPath);
-        file.mkdirs();
-        return String.format("Generated directory at %s%n", dirPath);
     }
 }
