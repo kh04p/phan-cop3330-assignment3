@@ -13,7 +13,7 @@ class AppTest {
     void textTest() {
         String filePath = "C:\\Users\\khoa1\\IdeaProjects\\COP3330\\phan-cop3330-assignment3\\src\\main\\java\\ex45\\";
 
-        String actualOutput = text.read(filePath);
+        String actualOutput = text.read(filePath, "exercise45_output.txt");
         String expectedOutput = "One should never use the word \"use\" in writing. Use \"use\" instead.\n" +
                 "For example, \"She uses an IDE to write her Java programs\" instead of \"She\n" +
                 "uses an IDE to write her Java programs\".\n";

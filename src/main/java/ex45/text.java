@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class text {
     //method to read in file from path.
-    public static String read(String filePath) {
+    public static String read(String filePath, String name) {
         try {
             File file = new File(filePath + "exercise45_input.txt");
             Scanner in = new Scanner(file);
@@ -20,17 +20,17 @@ public class text {
             }
 
             //passes String to create a new file with modified text and returns that text back to main
-            return create(scannedText.toString(), filePath);
+            return create(scannedText.toString(), filePath, name);
         } catch (FileNotFoundException e) {
             return "Unable to read file.";
         }
     }
 
-    public static String create(String scannedText, String filePath) {
+    public static String create(String scannedText, String filePath, String name) {
         String replacedText = scannedText.replaceAll("utilize", "use"); //replaces text as needed.
 
         try { //creates new file and write replaced text to file.
-            File file = new File(filePath + "exercise45_output.txt");
+            File file = new File(filePath + name);
             BufferedWriter output = new BufferedWriter(new FileWriter(file));
 
             output.write(replacedText);
