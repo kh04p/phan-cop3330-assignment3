@@ -22,7 +22,8 @@ class AppTest {
 
         String actualOutput = website.generate(filePath, author, title, choiceJS, choiceCSS);
 
-        //needed to add /r before /n due to comparison between LF and CRLF
+        //needed to add /r before /n due to comparison between LF and CRLF, IntelliJ won't switch Strings to only one type of separator.
+        //please remove /r if there are line separator errors when running test.
         String expectedOutput = String.format(
                 "Generated directory at C:\\Users\\khoa1\\IdeaProjects\\COP3330\\phan-cop3330-assignment3\\src\\main\\java\\ex43\\%s\\css\\\r\n" +
                 "Generated directory at C:\\Users\\khoa1\\IdeaProjects\\COP3330\\phan-cop3330-assignment3\\src\\main\\java\\ex43\\%s\\js\\\r\n" +

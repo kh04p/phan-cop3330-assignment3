@@ -13,7 +13,8 @@ class AppTest {
         String filePath = "C:\\Users\\khoa1\\IdeaProjects\\COP3330\\phan-cop3330-assignment3\\src\\main\\java\\ex44\\exercise44_input.json";
         ArrayList<Map<String, Object>> list =json.read(filePath);
 
-        //needed to add /r before /n due to comparison between LF and CRLF
+        //needed to add /r before /n due to comparison between LF and CRLF, IntelliJ won't switch Strings to only one type of separator.
+        //please remove /r if there are line separator errors when running test.
         String expected1 = "Name: Doodad | Price: 5.00 | Quantity: 10\r\n";
         String expected2 = "Name: Widget | Price: 25.00 | Quantity: 5\r\n";
         String expected3 = "Name: Thing | Price: 15.00 | Quantity: 5\r\n";
