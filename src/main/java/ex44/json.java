@@ -49,8 +49,8 @@ public class json {
 
     public static String search(ArrayList<Map<String, Object>> list, String name) {
         for (Map<String, Object> temp : list) {
-            String lowercaseName = (String) temp.get("name"); //since equalsIgnoreCase is not working, a temporary String variable is needed.
-            if (lowercaseName.toLowerCase().equals(name)) {
+            String tempName = (String) temp.get("name"); //needs to cast object to string before comparison
+            if (tempName.equalsIgnoreCase(name)) {
                 //returns product details if name matches.
                 return String.format("Name: %s | Price: %.2f | Quantity: %d%n",
                         temp.get("name"), temp.get("price"), temp.get("quantity"));

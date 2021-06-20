@@ -22,13 +22,13 @@ class AppTest {
 
         String actualOutput = website.generate(filePath, author, title, choiceJS, choiceCSS);
 
+        //needed to add /r before /n due to comparison between LF and CRLF
         String expectedOutput = String.format(
-                "Generated directory at C:\\Users\\khoa1\\IdeaProjects\\COP3330\\phan-cop3330-assignment3\\src\\main\\java\\ex43\\%s\\css\\\n" +
-                "Generated directory at C:\\Users\\khoa1\\IdeaProjects\\COP3330\\phan-cop3330-assignment3\\src\\main\\java\\ex43\\%s\\js\\\n" +
-                "Generated file at C:\\Users\\khoa1\\IdeaProjects\\COP3330\\phan-cop3330-assignment3\\src\\main\\java\\ex43\\%s\\index.html\n",
+                "Generated directory at C:\\Users\\khoa1\\IdeaProjects\\COP3330\\phan-cop3330-assignment3\\src\\main\\java\\ex43\\%s\\css\\\r\n" +
+                "Generated directory at C:\\Users\\khoa1\\IdeaProjects\\COP3330\\phan-cop3330-assignment3\\src\\main\\java\\ex43\\%s\\js\\\r\n" +
+                "Generated file at C:\\Users\\khoa1\\IdeaProjects\\COP3330\\phan-cop3330-assignment3\\src\\main\\java\\ex43\\%s\\index.html\r\n",
                 title, title, title);
 
-        //2 results are only different in line separators.
         assertEquals(expectedOutput, actualOutput);
     }
 }

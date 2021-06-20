@@ -15,7 +15,7 @@ public class App {
         //program will loop to ask user for product name until a product is found
         do {
             System.out.print("Enter a product name: ");
-            String name = in.nextLine().toLowerCase().trim(); //turns user input into lowercase string.
+            String name = in.nextLine().trim(); //takes in and trims any excess whitespace for user input.
             user = json.search(list, name); //passes user input and JSON list to search
             System.out.println(user); //prints results
         } while (user.equals("Product does not exist."));
