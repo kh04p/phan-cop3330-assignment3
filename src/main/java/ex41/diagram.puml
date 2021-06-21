@@ -1,0 +1,14 @@
+@startuml
+class App
+App *-- nameList: sorted alphabetically
+
+class input {
+    {static} ArrayList<Map<String, String>> read(filePath)
+    ArrayList<Map<String, String>> nameList
+    File file: object created from filePath.
+    Scanner in: scans file to extract names and add to nameList.
+}
+
+input -> nameList: nameList
+App --> input: path to exercise41_input.txt
+@enduml

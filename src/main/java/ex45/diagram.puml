@@ -1,0 +1,18 @@
+@startuml
+class App {
+Scanner in: scans user input for name of new file
+}
+
+App -> text: > directory of input file and where output file will be
+
+class text {
+File file: object created from directory + "exercise45_input.txt"
+StringBuilder scannedText: for data in input file
+Scanner in: scans file to extract data to scannedText
+}
+
+text -> create: > scannedText, filePath, user input to create file
+create -> text: > returns replacedText after replacing "initialize" with "use"
+
+text -> App: > replacedText
+@enduml

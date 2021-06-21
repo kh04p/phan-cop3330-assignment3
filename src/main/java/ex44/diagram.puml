@@ -1,0 +1,27 @@
+@startuml
+class App {
+Scanner in: scans user input to search for product.
+}
+
+class json {
+{method} read(filePath): reads in JSON file then exports ArrayList of products
+{method} search(filePath, list of employees): reads in list of products and user input to search
+import Gson to read JSON files
+File file: object created from filePath
+JsonElement: parses entire file into an element
+JsonObject: turns element into an object to extract data
+JsonArray: to read data as JSON file contains an array
+}
+
+App -> json: > path for exercise44_input.json
+App *-- list: list of products
+json --> list: > entire list of products
+App --> json: > user input to search for product
+json --> list: > details of matching product from searching
+
+class list {
+String name
+Double price
+int quantity
+}
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+class App
+
+App *- nameList
+
+class file {
+{method} {static} read(filePath)
+ArrayList<Map<String, String>> nameList.
+Map<String, String>> name: uses "first"/"last"/"salary" as key for map.
+File file: object created from filePath.
+Scanner in: extracts data from file to nameList.
+}
+
+class sortSalary {
+    comparator for sorting employee salary
+}
+
+App -> file: file path for exercise42_input.txt
+file -> nameList: nameList
+nameList ---> sortSalary: unsorted
+sortSalary ---> App: sorted based on salary
+
+@enduml

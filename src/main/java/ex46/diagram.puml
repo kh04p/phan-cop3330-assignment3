@@ -1,0 +1,26 @@
+@startuml
+class App {
+prints names and how frequent they appeared in input file
+}
+
+class sortText {
+comparator for sorting in descending order
+}
+
+class text {
+{method} scan(filePath): scans input file and return ArrayList of Maps
+{method} print(ArrayList<Map<String, Integer>>): scans ArrayList of Maps and prints names with their frequencies
+File file: object created from filePath
+ArrayList<Map<String, Integer>> wordList
+Map<String, Integer>: key will be name and value will be frequency
+Loop through each line of file and check if name already exists in ArrayList
+
+If name exists: increments frequency and change frequency value in ArrayList
+If name does not exist: sets frequency as 1 and put value into ArrayList of Maps
+}
+
+App -> text: > path of exercise46_input.txt
+text -> sortText: > unsorted arraylist
+sortText -> text: > sorted based on name frequencies
+text -> App: > String of names and their frequencies
+@enduml

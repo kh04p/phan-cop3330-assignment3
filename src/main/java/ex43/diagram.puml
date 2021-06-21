@@ -1,0 +1,20 @@
+@startuml
+class App {
+Scanner in: scans user input for author and title.
+String choice1, choice2: user's choice to generate JS/CSS folders
+}
+
+class website {
+{method} generateHTML: HTML file with content
+{method} generateDir: directory for the HTML file and JS/CSS folder if needed
+{method} generate: generates HTML and directory if user wants to
+
+File file: object created from filePath;
+String content: content for HTML file
+BufferedWriter: to write content to HTML file
+}
+
+App --> website: > path where directory should be created
+website -> App: > confirmation on which item was created
+
+@enduml
